@@ -1,6 +1,16 @@
 variable "prefix" {
   description = "The prefix for the resources created in the specified Azure Resource Group"
-  default     = "cluster"
+  default     = "aks"
+}
+
+variable "rg_prefix" {
+  description = "The prefix for the resources created in the specified Azure Resource Group"
+  default     = "rg-eus-mscafe"
+}
+
+variable "aks_prefix" {
+  description = "The prefix for the resources created in the specified Azure Resource Group"
+  default     = "mscafecluster"
 }
 
 variable "location" {
@@ -8,11 +18,11 @@ variable "location" {
   description = "The location for the AKS deployment"
 }
 
-variable "CLIENT_ID" {
+variable "client_id" {
   description = "The Client ID (appId) for the Service Principal used for the AKS deployment"
 }
 
-variable "CLIENT_SECRET" {
+variable "client_secret" {
   description = "The Client Secret (password) for the Service Principal used for the AKS deployment"
 }
 
@@ -43,7 +53,7 @@ variable "agents_count" {
 
 variable "kubernetes_version" {
   description = "Version of Kubernetes to install"
-  default     = "1.11.3"
+  default     = "1.12.7"
 }
 
 variable "public_ssh_key" {

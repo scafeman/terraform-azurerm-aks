@@ -3,7 +3,13 @@ variable "log_analytics_workspace_id" {
 }
 
 variable "prefix" {
-  description = "The prefix for the resources created in the specified Azure Resource Group."
+  description = "The prefix for the resources created in the specified Azure Resource Group"
+  default     = "aks"
+}
+
+variable "aks_prefix" {
+  description = "The prefix for the resources created in the specified Azure Resource Group"
+  default     = "mscafecluster"
 }
 
 variable "resource_group_name" {
@@ -38,7 +44,7 @@ variable "agents_size" {
 
 variable "kubernetes_version" {
   description = "Version of Kubernetes to install"
-  default     = "1.11.3"
+  default     = "1.12.7"
 }
 
 variable "service_principal_client_id" {

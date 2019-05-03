@@ -2,6 +2,11 @@ variable "prefix" {
   description = "The prefix for the resources created in the specified Azure Resource Group."
 }
 
+variable "log_prefix" {
+  description = "The prefix for the resources created in the specified Azure Resource Group"
+  default     = "mscafe-aks"
+}
+
 variable "resource_group_name" {
   description = "The name of the Resource Group in which the Virtual Network"
 }

@@ -1,9 +1,10 @@
 provider "azurerm" {
+
   version = "=1.23.0"
 }
 
 resource "azurerm_resource_group" "main" {
-  name     = "${var.prefix}-resources"
+  name     = "${var.rg_prefix}-${var.prefix}"
   location = "${var.location}"
 }
 
@@ -22,8 +23,8 @@ module "kubernetes" {
   agents_size                     = "${var.agents_size}"
   agents_count                    = "${var.agents_count}"
   kubernetes_version              = "${var.kubernetes_version}"
-  service_principal_client_id     = "${var.CLIENT_ID}"
-  service_principal_client_secret = "${var.CLIENT_SECRET}"
+  service_principal_client_id     = "${var.client_id}"
+  service_principal_client_secret = "${var.client_secret}"
   log_analytics_workspace_id      = "${module.log_analytics_workspace.id}"
 }
 

@@ -1,8 +1,8 @@
 resource "azurerm_kubernetes_cluster" "main" {
-  name                = "${var.prefix}-aks"
+  name                = "aks-${var.aks_prefix}"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group_name}"
-  dns_prefix          = "${var.prefix}"
+  dns_prefix          = "aks-${var.aks_prefix}"
   kubernetes_version  = "${var.kubernetes_version}"
 
   linux_profile {
